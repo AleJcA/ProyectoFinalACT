@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.View.CrearAereo"
+             xmlns:local="clr-namespace:ProyectoFinal.ViewModels"
+             >
+
+
+
+
+    <ContentPage.BindingContext>
+        <local:ViewModelAereo></local:ViewModelAereo>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Creacion de Medios Aereos"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label Text="Tipo Aeronove"></Label>
+            <Entry Text="{Binding nombreaereo}" Keyboard="Default"></Entry>
+            <Label Text="Modelo Aeronave"></Label>
+            <Entry Text="{Binding modeloaereo}" Keyboard="Default"></Entry>
+            <Label Text="año de la Aeronave"></Label>
+            <Entry Text="{Binding añolaereo}" Keyboard="Numeric"></Entry>
+            <Label Text="Color Aeronave"></Label>
+            <Entry Text="{Binding coloraereo}" Keyboard="Default"></Entry>
+            <Label Text="Cantidad de Helices"></Label>
+            <Entry Text="{Binding cantidadhaereo}" Keyboard="Numeric"></Entry>
+            <Label Text="Cantidad Alas"></Label>
+            <Entry Text="{Binding cantidadaaereo}" Keyboard="Numeric"></Entry>
+            <Button Command="{Binding crearAereo}" Text="Crear Aeronave"></Button>
+
+            <ListView ItemsSource="{Binding listaAereo}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding NombreA}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
