@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.View.HacerRecorridoAereo"
+             xmlns:local="clr-namespace:ProyectoFinal.ViewModels"
+             >
+
+    <ContentPage.BindingContext>
+        <local:ViewModelAereoHacerRecorrido></local:ViewModelAereoHacerRecorrido>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="30">
+
+            <Label Text="Kilometros a recorrer" HorizontalOptions="Center"></Label>
+            <Entry Text="{Binding  kmrAereo}" Keyboard="Numeric" FontSize="24" FontAttributes="Bold" Margin="0,0,0,20" ></Entry>
+            <Button Command="{Binding Recorrer}" Text="Hacer el Recorrido" BackgroundColor="#2196F3" TextColor="White"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
